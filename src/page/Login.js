@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import Button from "../components/Button";
 import Bird from "../asset/Bird.jpg"
+import Router from "../routes/Router";
 
-function Login(){
+function Login(props){
 
   /*
   * use state and Effect
@@ -51,49 +52,52 @@ function Login(){
     * HTML {javascript}
     */
     return(
-      <div style={{
+
+      <div>
+        {success ? <Router/> : 
+        <div style={{
         position:"relative",
         top:"560px",
-        left:"20%",
-        }}
-      >
-        {success === true ? "on" : 
-        <div>
-          <img src={Bird} alt="bird" style={{width: "500px"}}/>
-          <form onSubmit={handleSubmit}>
+        left:"20%"
+        }}>
           <div>
-            <label htmlFor="Usrid">ID |</label>
-            <input
-              value={Usrid || ""}
-              placeholder="Usrid"
-              id="Usrid"
-              type="text"
-              onChange={(e) => setUsrid(e.target.value)}
-              >
-              </input>
+            <img src={Bird} alt="bird" style={{width: "500px"}}/>
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor="Usrid">ID |</label>
+                <input
+                  value={Usrid || ""}
+                  placeholder="Usrid"
+                  id="Usrid"
+                  type="text"
+                  onChange={(e) => setUsrid(e.target.value)}
+                  >
+                  </input>
+              </div>
+              <div style={{position:"relative", top:"5px"}}>
+                <label htmlFor="UsrPw">비밀번호 |</label>
+                <input
+                  placeholder="UsrPw"
+                  type="password"
+                  id="UsrPw"
+                  value={UsrPw || ""}
+                  onChange={(e) => setHours(e.currentTarget.value)}
+                >
+                </input>
+              </div>
+              <div style={{position:"relative", top:"10px"}}>
+                <Button
+                  type="submit"
+                  text="제출"//파라미터 던진거 잘 볼 것
+                >
+                </Button>
+              </div>
+            </form>
           </div>
-          <div style={{position:"relative", top:"5px"}}>
-            <label htmlFor="UsrPw">비밀번호 |</label>
-            <input
-              placeholder="UsrPw"
-              type="password"
-              id="UsrPw"
-              value={UsrPw || ""}
-              onChange={(e) => setHours(e.currentTarget.value)}
-            >
-            </input>
-          </div>
-          <div style={{position:"relative", top:"10px"}}>
-            <Button
-              type="submit"
-              text="제출"//파라미터 던진거 잘 볼 것
-            >
-            </Button>
-          </div>
-        </form>
         </div>
-        }
-      </div>
+      }
+    </div>
+
     )
 }
 

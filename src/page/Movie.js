@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Home(){
+function Movie(){
     /*
     * use state and Effect
     */
@@ -14,9 +14,9 @@ function Home(){
     */
     return(
         <div>
-            
+            <p>Movie</p>
         </div>
     )
 }
 
-export default Home;
+export default Movie;
