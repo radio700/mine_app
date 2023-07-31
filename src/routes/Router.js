@@ -1,7 +1,8 @@
 import {Routes, Route, BrowserRouter, Link} from "react-router-dom"
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Home from "../page/Home";
 import Movie from "../page/Movie";
+import FormExample2 from "../page/FormExample2";
 
 function Router(){
 
@@ -22,7 +23,7 @@ function Router(){
     * HTML {javascript}
     */
     return(
-        <div>
+      <div>
         <BrowserRouter>
           <nav style={{
             position:"relative",
@@ -33,15 +34,16 @@ function Router(){
           }}>
               <Link to="/">home | </Link>
               <Link to="/Movie">Movie |</Link>
-
+              <Link to="/FormExample2">FormExample2 |</Link>
           </nav>
           <Routes>
               <Route path="/" element={<Home/>}></Route>
               <Route path="/Movie" element={<Movie/>}></Route>
+              <Route path="/FormExample2" element={<FormExample2/>}></Route>
               {/* <Route path ="/movie/:id" element={<Detail/>} ></Route> */}
           </Routes>
         </BrowserRouter>
-        </div>
+      </div>
     )
 }
 
