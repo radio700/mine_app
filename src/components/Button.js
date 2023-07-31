@@ -20,7 +20,6 @@ function Button({text,className}){
     */
     return(
         <div>
-
             <button 
                 // className={`${btnStyle}.${className}`}
                 className={btnStyle.primary}
