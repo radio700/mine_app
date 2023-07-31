@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Button from "./components/Button";
 
 
 function App(){
@@ -8,6 +9,7 @@ function App(){
     */
     const [Usrid,setUsrid] = useState("");
     const [UsrPw,setHours] = useState("");
+    const [success,setSuccess] = useState(false);
 
     useEffect(() =>{
     
@@ -28,8 +30,13 @@ function App(){
             return;
         }
 
-        if(Usrid === user.id && UsrPw === user.pw) alert("oo")
-        else alert("유저가 존재하지 않거나 비밀번호가 틀렸어요")
+        if(Usrid === user.id && UsrPw === user.pw){
+            setSuccess(true);
+        }
+        else{
+            alert("유저가 존재하지 않거나 비밀번호가 틀렸어요");
+            setSuccess(false);
+        }
         
     }
 
@@ -43,7 +50,9 @@ function App(){
     */
     return(
         <div>
-            <form onSubmit={handleSubmit}>
+            
+            {success === true ? "on" : 
+                <form onSubmit={handleSubmit}>
                 <label htmlFor="Usrid">ID | </label>
                 <input
                     value={Usrid || ""}
@@ -62,8 +71,16 @@ function App(){
                     onChange={(e) => setHours(e.currentTarget.value)}
                 >
                 </input>
-                <button type="submit">Login</button>
+                <Button
+                    type="submit"
+                    text="제출"//파라미터 던진거 잘 볼 것
+                >
+                </Button>
+
             </form>
+            }
+
+            
 
         </div>
     )
