@@ -5,6 +5,7 @@ import Movie from "../page/sys/Movie";
 import FormExample2 from "../page/sys/FormExample2";
 import Array from "../page/sys/Array";
 import Promise from "../page/sys/Promise";
+import Detail from "../page/sys/Detail";
 
 function Router(){
 
@@ -46,7 +47,7 @@ function Router(){
               <Route path="/FormExample2" element={<FormExample2/>}></Route>
               <Route path="/Array" element={<Array/>}></Route>
               <Route path="/Promise" element={<Promise/>}></Route>
-              {/* <Route path ="/movie/:id" element={<Detail/>} ></Route> */}
+              <Route path ="/movie/:id" element={<Detail/>} ></Route>
           </Routes>
         </BrowserRouter>
       </div>

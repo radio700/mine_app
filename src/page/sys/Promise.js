@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-function Movies({qwer,id,title, summary, img}){
+
+function Movies({qwer,id,title, summary, img,genres}){
   return (
     <div>
-      <h2>{title}</h2>
-      <p>{summary}</p>
+      <Link to={`/movie/${id}`}><p>{title}</p></Link>
+      {
+        genres == null ? null : <p>genres : {genres}</p>
+      }
       <img src={img} alt={title}/>
     </div>
   )
@@ -20,7 +24,7 @@ function Promise(){
   
 
   useEffect(() =>{
-    fetch(url)
+    fetch(url,{ method:"POST" })
     .then(response => response.json())
     .then(json => {
         setMovies(json.data.movies);
@@ -30,7 +34,7 @@ function Promise(){
   /*
   * User Function
   */
-  let url = "https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year";
+  let url = "https://yts.mx/api/v2/list_movies.json";
 
   /*
   * HTML {javascript}
@@ -45,7 +49,7 @@ function Promise(){
             title={movie.title}
             summary = {movie.summary}
             img = {movie.large_cover_image}
-
+            genres = {movie.genres}
           ></Movies>
         ))
       }
