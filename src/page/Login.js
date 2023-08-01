@@ -78,7 +78,7 @@ function Login(props){
                 <label htmlFor="UsrPw">비밀번호 |</label>
                 <input
                   placeholder="UsrPw"
-                  type="password"
+                  type="text"
                   id="UsrPw"
                   value={UsrPw || ""}
                   onChange={(e) => setHours(e.currentTarget.value)}

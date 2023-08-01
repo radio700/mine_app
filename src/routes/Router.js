@@ -7,6 +7,7 @@ import Array from "../page/sys/Array";
 import Promise from "../page/sys/Promise";
 import Detail from "../page/sys/Detail";
 import Weather from "../page/sys/WeatherApi";
+import Github from "../page/sys/Github";
 
 function Router(){
 
@@ -42,6 +43,7 @@ function Router(){
               <Link to="/Array">배열(Map) |</Link>
               <Link to="/Promise">Promise |</Link>
               <Link to="/Weather">Weather |</Link>
+              <Link to="/Github">Github |</Link>
               
           </nav>
           <Routes>
@@ -52,6 +54,7 @@ function Router(){
               <Route path="/Promise" element={<Promise/>}></Route>
               <Route path ="/movie/:id" element={<Detail/>} ></Route>
               <Route path="/Weather" element={<Weather/>}></Route>
+              <Route path="/Github" element={<Github/>}></Route>
           </Routes>
         </BrowserRouter>
       </div>
