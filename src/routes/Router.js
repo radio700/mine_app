@@ -6,6 +6,7 @@ import FormExample2 from "../page/sys/FormExample2";
 import Array from "../page/sys/Array";
 import Promise from "../page/sys/Promise";
 import Detail from "../page/sys/Detail";
+import Weather from "../page/sys/WeatherApi";
 
 function Router(){
 
@@ -40,6 +41,8 @@ function Router(){
               <Link to="/FormExample2">FormExample2 |</Link>
               <Link to="/Array">배열(Map) |</Link>
               <Link to="/Promise">Promise |</Link>
+              <Link to="/Weather">Weather |</Link>
+              
           </nav>
           <Routes>
               <Route path="/" element={<Home/>}></Route>
@@ -48,6 +51,7 @@ function Router(){
               <Route path="/Array" element={<Array/>}></Route>
               <Route path="/Promise" element={<Promise/>}></Route>
               <Route path ="/movie/:id" element={<Detail/>} ></Route>
+              <Route path="/Weather" element={<Weather/>}></Route>
           </Routes>
         </BrowserRouter>
       </div>
